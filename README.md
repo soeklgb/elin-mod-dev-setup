@@ -48,7 +48,7 @@ SampleMod
 - VSCodeでSampleModフォルダーを開いてください
 - `Ctrl+@`でVSCodeのターミナルを開いてください
 - 現在のパスがSampleModであることを確認してください
-- `dotnet build`でSampleModをビルドします
+- `dotnet build`コマンドでSampleModをビルドします
 - SampleModフォルダに`bin`と`obj`が生成されます
 - `bin`フォルダの中に動作可能なModのファイルが生成されます
 - `bin`フォルダの中からElinのPackageフォルダへのコピーは自動で行われます（`SampleMod.csproj`で設定されています）

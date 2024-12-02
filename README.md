@@ -7,13 +7,15 @@ OSはWindows11を想定しています。
 
 ## 1. .NETのインストール
 
-[.NET](https://dotnet.microsoft.com)はElinのModのプログラミングで使うフレームワークです。
+[.NET](https://dotnet.microsoft.com)はElinのMod開発で使うフレームワークです。
+
 まずは.NETをインストールをします。
 
 1. [.NETのダウンロードページ](https://dotnet.microsoft.com/ja-jp/download)から.NET 9.0の.NET SDKをダウンロードします。
 2. ダウンロードしたファイルを実行してインストールを完了させます。
 
 .NETをインストールすると`dotnet`コマンドが使えるようになります。
+
 .NETがインストールされていることを確認してみましょう。
 
 1. デスクトップで右クリックして「ターミナルで開く」でWindows PowerShellを開きます。
@@ -21,12 +23,12 @@ OSはWindows11を想定しています。
 
 ## 2. Visual Studio Codeのインストール
 
-[Visual Studio Code](https://code.visualstudio.com/)
- (VSCode)はカスタマイズ性の高いコードエディターです。ElinのMod開発でコードを書くときはおもにこのVSCodeを使って書いていきます。
+[Visual Studio Code](https://code.visualstudio.com/) (VSCode)はカスタマイズ性の高いコードエディターです。
+ 
+ ElinのMod開発でコードを書くときはおもにこのVSCodeを使って書いていきます。
 
 1. [VSCodeの公式サイト](https://code.visualstudio.com/)からVSCodeをダウンロードします
-2. ダウンロードしたファイルを実行して表示されるウィンドウの手順にしたがってインストールを完了させます。
-  - 途中で出る「デスクトップ上にアイコンを作成する」にチェックを入れておくとよいでしょう
+2. ダウンロードしたファイルを実行してインストールを完了させます。
 
 ## 3. SampleMod
 
@@ -46,7 +48,7 @@ SampleMod
 
 - [SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください
 - VSCodeでSampleModフォルダーを開いてください
-- `Ctrl+@`でVSCodeのターミナルを開いてください
+- `Ctrl + @`でVSCodeのターミナルを開いてください
 - 現在のパスがSampleModであることを確認してください
 - `dotnet build`コマンドでSampleModをビルドします
 - SampleModフォルダに`bin`と`obj`が生成されます

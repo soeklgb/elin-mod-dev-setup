@@ -32,7 +32,7 @@ OSはWindows11を想定しています。
 
 > [!NOTE]
 > ここからはほぼ箇条書きになってます
-> 
+
 ```
 SampleMod
  ┣━ package.xml
@@ -44,7 +44,8 @@ SampleMod
 
 データは[Excelデータをインポートしてキャラやアイテムを追加してみる](https://docs.google.com/document/d/e/2PACX-1vR3GPx71Xnjfme6PtdqNnS5GnxlOFr2A8KdzH8bYTEwEOCgeVYROi3YaMQ2_h4qsySU_BORHKXPUi9i/pub)からお借りしました。
 
-- VSCodeでSampleModを開いてください
+- [SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください
+- VSCodeでSampleModフォルダーを開いてください
 - `Ctrl+@`でVSCodeのターミナルを開いてください
 - 現在のパスがSampleModであることを確認してください
 - `dotnet build`でSampleModをビルドします

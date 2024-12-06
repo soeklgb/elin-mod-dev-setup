@@ -4,6 +4,7 @@
   <id>author_sample_mod</id>
   <author>author</author>
   <loadPriority>100</loadPriority>
-  <description>This is a sample mod.</description>
+  <tags></tags>
+  <description></description>
   <version>0.23.46</version>
 </Meta>

@@ -30,32 +30,42 @@ OSはWindows11を想定しています。
 1. [VSCodeの公式サイト](https://code.visualstudio.com/)からVSCodeをダウンロードします
 2. ダウンロードしたファイルを実行してインストールを完了させます。
 
-## 3. SampleMod
+## 3. SampleModのビルド
 
-> [!NOTE]
-> ここからはほぼ箇条書きになってます
+最低限必要な環境が揃ったので、ゲームのログにテキストを表示するだけのサンプルModのビルドをしてみましょう。
+
+まず、[SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください。展開したSampleModフォルダーをVSCodeで開いてみましょう。SampleModフォルダーをVSCode上にドラッグアンドドロップすると開けます。
+
+SampleModフォルダーはこのような構造になっています。
 
 ```
 SampleMod
  ┣━ package.xml
  ┣━ Plugin.cs
- ┣━ preview.jpg
- ┣━ SampleMod.csproj
- ┗━ SourceCard.xml
+ ┗━ SampleMod.csproj
 ```
 
-データは[Excelデータをインポートしてキャラやアイテムを追加してみる](https://docs.google.com/document/d/e/2PACX-1vR3GPx71Xnjfme6PtdqNnS5GnxlOFr2A8KdzH8bYTEwEOCgeVYROi3YaMQ2_h4qsySU_BORHKXPUi9i/pub)からお借りしました。
+`package.xml`は、ElinのModをSteam Workshopにアップロードする際に必要になる設定ファイルです。
 
-- [SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください
-- VSCodeでSampleModフォルダーを開いてください
-- `Ctrl + @`でVSCodeのターミナルを開いてください
-- 現在のパスがSampleModであることを確認してください
-- `dotnet build`コマンドでSampleModをビルドします
+`Plugin.cs`は、SampleModの動作が記述されたソースコードです。 **C#** というプログラミング言語で書かれています。
+
+`SampleMod.csproj`は、C#で書かれたプログラムのビルドの設定と動作を記述するファイルです。一般的には **プロジェクトファイル** と呼ばれています。
+
+SampleModのビルドには`dotnet build`コマンドを使います。
+`Ctrl + @`でVSCodeのターミナルを開いて`dotnet build`を実行してみましょう。
+
+> [!NOTE]
+> `dotnet build`コマンドはカレントディレクトリを対象に実行されます。
+> 何らかの理由でカレントディレクトリがSampleModフォルダーでない場合は`cd`コマンドでカレントディレクトリを変更しましょう。
+
+ログに`5.2 秒後に 成功しました をビルド`と~~奇妙な文が~~表示されれば、ビルドは成功です。
+
+---
+
+- Elinを起動して動作確認をします
 - SampleModフォルダに`bin`と`obj`が生成されます
 - `bin`フォルダの中に動作可能なModのファイルが生成されます
 - `bin`フォルダの中からElinのPackageフォルダへのコピーは自動で行われます（`SampleMod.csproj`で設定されています）
-- [Excelデータをインポートしてキャラやアイテムを追加してみる](https://docs.google.com/document/d/e/2PACX-1vR3GPx71Xnjfme6PtdqNnS5GnxlOFr2A8KdzH8bYTEwEOCgeVYROi3YaMQ2_h4qsySU_BORHKXPUi9i/pub)と同じように動作するはずです
-- SampleModが動作しているかの確認は[こちら](https://discord.com/channels/208391609778307075/1213053125590777866/1255361975907651634)を参考にしてください
 - `dotnet build`でビルドするとModフォルダにデバッグ用のファイル(`.pdb`)が生成されます。配布しても問題ありませんが、`dotnet build -c Release`を使えば`.pdb`を生成させずにビルドできます（`SampleMod.csproj`で設定されています）
 - Modの配布の仕方に関する情報は[開発小部屋](https://ylvania.org/elin_dev.html)にあります
 

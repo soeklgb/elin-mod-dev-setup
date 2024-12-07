@@ -34,12 +34,31 @@ OSはWindows11を想定しています。
 
 最低限必要な環境が揃ったので、ゲームのログにテキストを表示するだけのサンプルModのビルドをしてみましょう。
 
-まず、[SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください。展開したSampleModフォルダーをVSCodeで開いてみましょう。SampleModフォルダーをVSCode上にドラッグアンドドロップすると開けます。
+[SampleMod.zip](https://github.com/soeklgb/elin-mod-dev-setup/raw/refs/heads/main/SampleMod.zip)をダウンロードして展開してください。
+展開したらSampleModフォルダーをVSCodeで開いてみましょう。
+SampleModフォルダーをVSCode上にドラッグアンドドロップすると開けます。
+
+SampleModのビルドには`dotnet build`コマンドを使います。
+`Ctrl + @`でVSCodeのターミナルを開いて`dotnet build`を実行します。
+
+コマンドを実行したターミナルのログに`5.2 秒後に 成功しました をビルド`と~~奇妙な文が~~表示されれば、ビルドは成功です。
+
+> [!NOTE]
+> `dotnet build`コマンドはカレントディレクトリを対象に実行されます。
+> 何らかの理由でカレントディレクトリがSampleModフォルダーでない場合は、`cd`コマンドでカレントディレクトリを変更しましょう。
+
+SampleModではビルドしたModは`Elin/Package`（ElinのModを配置するフォルダー）に作成されるので、Modの動作をすぐに確認できます。
+
+Elinを起動してセーブデータをロードしたとき、ログに「Hello, World!」と表示されていればSampleModは動作しています。
+
+## 4. SampleModの内容
 
 SampleModフォルダーはこのような構造になっています。
 
 ```
 SampleMod
+ ┣━ bin
+ ┣━ obj
  ┣━ package.xml
  ┣━ Plugin.cs
  ┗━ SampleMod.csproj
@@ -51,23 +70,21 @@ SampleMod
 
 `SampleMod.csproj`は、C#で書かれたプログラムのビルドの設定と動作を記述するファイルです。一般的には **プロジェクトファイル** と呼ばれています。
 
-SampleModのビルドには`dotnet build`コマンドを使います。
-`Ctrl + @`でVSCodeのターミナルを開いて`dotnet build`を実行してみましょう。
+`bin`フォルダーと`obj`フォルダーはビルド時に作成されるファイルです。ビルドの過程で生成されるファイルや、コンパイルによって生成されたDLLファイルが格納されています。
 
-> [!NOTE]
-> `dotnet build`コマンドはカレントディレクトリを対象に実行されます。
-> 何らかの理由でカレントディレクトリがSampleModフォルダーでない場合は`cd`コマンドでカレントディレクトリを変更しましょう。
+### package.xml
 
-ログに`5.2 秒後に 成功しました をビルド`と~~奇妙な文が~~表示されていれば、ビルドは成功です。
+TODO
+
+### Plugin.cs
+
+TODO
+
+### SampleMod.csproj
+
+TODO
 
 ---
-
-- Elinを起動して動作確認をします
-- SampleModフォルダに`bin`と`obj`が生成されます
-- `bin`フォルダの中に動作可能なModのファイルが生成されます
-- `bin`フォルダの中からElinのPackageフォルダへのコピーは自動で行われます（`SampleMod.csproj`で設定されています）
-- `dotnet build`でビルドするとModフォルダにデバッグ用のファイル(`.pdb`)が生成されます。配布しても問題ありませんが、`dotnet build -c Release`を使えば`.pdb`を生成させずにビルドできます（`SampleMod.csproj`で設定されています）
-- Modの配布の仕方に関する情報は[開発小部屋](https://ylvania.org/elin_dev.html)にあります
 
 ## TODO
 
@@ -75,10 +92,10 @@ SampleModのビルドには`dotnet build`コマンドを使います。
   - `C#`拡張機能（`ms-dotnettools.csharp`）
   - `C# Dev Kit`はいらない？
 - dnSpyのインストール
-- `.csproj`の解説
 - BepInExのログの表示の仕方
 - ドキュメントのリンク集
   - 特に`.csproj`
+- .pdb
 
 ## 他の解説に任せるもの
 

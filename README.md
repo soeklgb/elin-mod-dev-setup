@@ -1,7 +1,7 @@
 # ElinのMod開発環境の作り方（VSCode + dnSpy）
 
 > [!WARNING]
-> まだ書いている途中です！
+> もう更新されません！
 
 OSはWindows11を想定しています。
 
